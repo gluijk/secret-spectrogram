@@ -15,6 +15,7 @@ library(terra)  # resample()
 time2sample=function(t, fs=48000) {(round(t*fs+1))}
 sample2time=function(n, fs=48000) {((n-1)/fs)}
 
+# Input image resample
 arrayresample=function(img, DIMX, DIMY, method='bilinear') {
     require(terra)
     
@@ -23,6 +24,7 @@ arrayresample=function(img, DIMX, DIMY, method='bilinear') {
     rasterrs=resample(raster, rasterrs, method=method)
     return (as.array(rasterrs))
 }
+
 
 
 # SPECTROGRAM IMAGE ENCODING
@@ -147,6 +149,7 @@ for (frame in 0:(NFRAMES-1)) {
     
     print(paste0(frame+1, "/", NFRAMES))
 }
+
 
 
 # BUILD MP4
