@@ -142,13 +142,13 @@ for (frame in 0:(NFRAMES-1)) {
     frm[,CENTRO,2:3]=0
     
     writePNG(frm, paste0("img", ifelse(frame<10, "000",
-                                       ifelse(frame<100, "00",
-                                              ifelse(frame<1000, "0", ""))), frame, ".png"))
+                                ifelse(frame<100, "00",
+                                ifelse(frame<1000, "0", ""))), frame, ".png"))
     
     print(paste0(frame+1, "/", NFRAMES))
 }
 
 
-# Build MP4
+# BUILD MP4
 # ffmpeg -framerate 150 -i img%4d.png -i secretspectrogram.wav -c:v libx264
 #        -crf 18 -pix_fmt yuv420p secretspectrogram.mp4
