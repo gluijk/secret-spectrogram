@@ -33,6 +33,7 @@ fmax=20000  # max encoding frequeny (Hz)
 NFREQ=100  # total number of frequencies
 DURATION=30  # generated audio clip duration (s)
 fs=48000  # sampling frequency (Hz)
+if (fmax>=fs/2) print("WARNING: to prevent aliasing fmax must be lower than fs/2")
 
 type='lin'  # type=c('lin, 'log')
 if (type=='lin') {
@@ -48,7 +49,7 @@ for (i in 1:NFREQ) signal[NFREQ-i+1,]=sin(2*pi*freqs[i]*time)  # create tones
 # Plot 10 lowest frequencies
 samples1ms=time2sample(0.001)  # 1ms of signal
 matplot(seq(from=0, to=0.001, length.out=samples1ms),
-    t(signal[(NFREQ-10):NFREQ, 1:samples1ms]), type='l',
+    t(signal[(NFREQ-9):NFREQ, 1:samples1ms]), type='l',
     main=paste0('10 lowest frequencies of ', NFREQ, ' frequencies'),
     xlab='Time span (1ms)', ylab='')
 
