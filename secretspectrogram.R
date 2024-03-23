@@ -2,11 +2,6 @@
 # www.overfitting.net
 # https://www.overfitting.net/2024/03/ocultando-imagenes-en-el-espectro-de-un.html
 
-# Formas de codificar una imagen en el espectrograma de un sonido:
-#  Generar una señal de ruido blanco y filtrarlo de forma adaptativa en el tiempo según la imagen a codificar
-#  Considerar la imagen a codificar directamente como un espectrograma y ejecutar sobre él la FFT inversa a tramos temporales
-#  Construir un generador multitono y modular sus distintas frecuencias en el tiempo en base a la imagen a codificar
-
 library(tuneR)  # readWave() (read WAV audio file)
 library(signal)  # specgram(), much faster than phonTools::spectrogram()
 library(tiff)
@@ -32,7 +27,7 @@ arrayresample=function(img, DIMX, DIMY, method='bilinear') {
 
 # SPECTROGRAM IMAGE ENCODING
 fmin=500  # min encoding frequency (Hz)
-fmax=20000  # max enconding frequeny (Hz)
+fmax=20000  # max encoding frequeny (Hz)
 NFREQ=100  # total number of frequencies
 DURATION=30  # generated audio clip duration (s)
 fs=48000  # sampling frequency (Hz)
