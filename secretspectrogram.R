@@ -1,6 +1,6 @@
 # Spectrogram image encoding
 # www.overfitting.net
-# https://www.overfitting.net/
+# https://www.overfitting.net/2024/03/ocultando-imagenes-en-el-espectro-de-un.html
 
 # Formas de codificar una imagen en el espectrograma de un sonido:
 #  Generar una señal de ruido blanco y filtrarlo de forma adaptativa en el tiempo según la imagen a codificar
