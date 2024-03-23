@@ -31,11 +31,11 @@ arrayresample=function(img, DIMX, DIMY, method='bilinear') {
 
 
 # SPECTROGRAM IMAGE ENCODING
-fs=48000  # sampling frequency (Hz)
 fmin=500  # min encoding frequency (Hz)
 fmax=20000  # max enconding frequeny (Hz)
 NFREQ=100  # total number of frequencies
-DURATION=30  # duration (s)
+DURATION=30  # generated audio clip duration (s)
+fs=48000  # sampling frequency (Hz)
 
 type='lin'  # type=c('lin, 'log')
 if (type=='lin') {
