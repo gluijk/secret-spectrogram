@@ -48,10 +48,11 @@ signal=matrix(0, nrow=NFREQ, ncol=length(time))
 for (i in 1:NFREQ) signal[NFREQ-i+1,]=sin(2*pi*freqs[i]*time)  # create tones
 # Plot 10 lowest frequencies
 samples1ms=time2sample(0.001)  # 1ms of signal
-matplot(seq(from=0, to=0.001, length.out=samples1ms),
+matplot(seq(from=0, to=1, length.out=samples1ms),
     t(signal[(NFREQ-9):NFREQ, 1:samples1ms]), type='l',
     main=paste0('10 lowest frequencies of ', NFREQ, ' frequencies'),
-    xlab='Time span (1ms)', ylab='')
+    xlab='Time (ms)', ylab='')
+abline(h=0)
 
 image=readPNG("image.png")  # read image to encode
 image=arrayresample(image, DIMX=ncol(signal), DIMY=nrow(signal))
