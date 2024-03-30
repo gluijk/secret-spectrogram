@@ -172,7 +172,7 @@ for (frame in 0:(NFRAMES-1)) {
     frm[,CENTRO,1]=1
     frm[,CENTRO,2:3]=0
 
-    if (!frame%%8) {  # 2683frames, 86.892s audio track at 2683/86.892=30fps       
+    if (!frame%%8) {  # 2683frames, 86.892s audio track at 2683/86.89187=30.8775fps       
         writePNG(frm, paste0("img", ifelse(frame2<10, "0000",
                                     ifelse(frame2<100, "000",
                                     ifelse(frame2<1000, "00",
@@ -191,6 +191,6 @@ for (frame in 0:(NFRAMES-1)) {
 # ffmpeg -framerate 246.98 -i img%5d.png -i secretspectrogramSTARWARS.wav -c:v libx264
 #        -crf 18 -pix_fmt yuv420p secretspectrogramSTARWARS.mp4
 
-# 30 fps version:
-# ffmpeg -framerate 30 -i img%5d.png -i secretspectrogramSTARWARS.wav -c:v libx264
+# 30fps version:
+# ffmpeg -framerate 30.8775 -i img%5d.png -i secretspectrogramSTARWARS.wav -c:v libx264
 #        -crf 18 -pix_fmt yuv420p secretspectrogramSTARWARS.mp4
