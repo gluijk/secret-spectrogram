@@ -83,11 +83,11 @@ signalout2=signalout2/MAX
 sound=readWave("starwars.wav")  # read STAR WARS WAV
 
 bits=16
-signaladd=round(signalout*(2^(bits-1)-1))[1:length(sound@left)]
-sound@left=0.8*sound@left+0.2*signaladd  # normalize to 16-bit integer
+signaladd=round(signalout*(2^(bits-1)-1))[1:length(sound@left)]  # normalize to 16-bit integer
+sound@left=0.8*sound@left+0.2*signaladd
 
-signaladd=round(signalout2*(2^(bits-1)-1))[1:length(sound@right)]
-sound@right=0.8*sound@right+0.2*signaladd  # normalize to 16-bit integer
+signaladd=round(signalout2*(2^(bits-1)-1))[1:length(sound@right)]  # normalize to 16-bit integer
+sound@right=0.8*sound@right+0.2*signaladd
 
 # sound@samp.rate=fs
 # sound@bit=bits
